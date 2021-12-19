@@ -1,7 +1,6 @@
 package ru.ashcheulov.pojo;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -9,7 +8,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "rsatu_student")
-public class Student {
+public class Student implements BasePojo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_generator")

@@ -6,7 +6,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class StudentService {
     }
 
     public List<Student> getStudents() {
-        return entityManager.createQuery("select s from Student s",Student.class).getResultList();
+        return entityManager.createQuery("select s from Student s", Student.class).getResultList();
     }
 
     public Student initStudent() {
@@ -40,6 +39,14 @@ public class StudentService {
         student.setEmail("q@q.q");
         student.setInn(1213123L);
         student.setFio("Ivanov Ivan Ivanovich");
+        return student;
+    }
+
+    @Transactional
+    public Student deleteStudent(Student student) {
+        var s = entityManager.find(Student.class, student.getId());
+        entityManager.remove(s);
+        entityManager.flush();
         return student;
     }
 }
