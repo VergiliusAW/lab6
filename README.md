@@ -74,6 +74,11 @@ Resource
 [``TeacherProducer``](/src/main/java/ru/ashcheulov/producers/TeacherProducer.java), 
 в которых сделаны реализации интерфейса [``CRUDService``](/src/main/java/ru/ashcheulov/service/CRUDService.java)
 
+API
+<img src="API.png" alt="error">
+
+Schemas
+<img src="Schemas.png">
 
 ## Команда для запуска докер контейнера БД для лабы
 
