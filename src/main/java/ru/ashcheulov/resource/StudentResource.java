@@ -15,6 +15,7 @@ public class StudentResource {
     StudentService studentService;
 
     @Path("/get")
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getStudent() {
         return Response.ok(studentService.initStudent()).build();
